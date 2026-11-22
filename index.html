@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Anaya ke liye</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;1,400;1,600&family=DM+Sans:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#f1ecfa; --ink:#2a2350; --soft:#6a6190; --rose:#c2477a; --card:#fbf9ff; --line:#d9d0ee;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#1b1736; --ink:#efeaff; --soft:#b3aad6; --rose:#f08ab4; --card:#251f48; --line:#3b3468; }
+}
+:root[data-theme="dark"]{ --bg:#1b1736; --ink:#efeaff; --soft:#b3aad6; --rose:#f08ab4; --card:#251f48; --line:#3b3468; }
+*{box-sizing:border-box}
+html{height:100%}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;line-height:1.7;display:flex;justify-content:center}
+main{width:100%;max-width:540px;padding:56px 24px 80px}
+h1{font-family:"Fraunces",Georgia,serif;font-style:italic;font-weight:600;font-size:clamp(2.3rem,11vw,3.3rem);line-height:1.1;margin:0 0 20px}
+.lead{color:var(--soft);font-size:1.05rem;margin:0 0 32px}
+button{font:inherit;cursor:pointer;border-radius:999px;padding:14px 26px;border:1.5px solid var(--rose);background:var(--rose);color:#fff;font-weight:500}
+button.ghost{background:transparent;color:var(--rose)}
+button:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.view{display:none}
+.view.on{display:block}
+.rise{animation:rise .9s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.rise{animation:none}}
+.paper{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px 24px}
+.paper p{font-family:"Fraunces",Georgia,serif;font-size:1.1rem;line-height:1.85;margin:0 0 20px}
+.paper p:last-child{margin-bottom:0}
+.sign{font-style:italic;color:var(--rose);margin-top:26px}
+#letter{display:none;margin-top:8px}
+#letter.open{display:block}
+.next{margin-top:28px}
+.promise{padding:22px 0;border-bottom:1px solid var(--line)}
+.promise:first-of-type{padding-top:4px}
+.promise h2{font-family:"Fraunces",Georgia,serif;font-size:1.3rem;font-weight:600;margin:0 0 8px;color:var(--rose)}
+.promise p{margin:0;font-size:1.02rem}
+.answer{margin-top:32px;display:flex;flex-direction:column;gap:12px}
+#reply{display:none;margin-top:18px;color:var(--soft)}
+a.back{color:var(--soft);font-size:.95rem;display:inline-block;margin-bottom:28px}
+</style>
+</head>
+<body>
+<main>
+
+<!-- PAGE 1 -->
+<div class="view on" id="v-letter">
+  <h1>Anaya,<br>ye tere liye.</h1>
+  <p class="lead">Koi pressure nahi hai. Bas kuch baatein hain jo dil me thi. Jab man ho, tab araam se padh lena.</p>
+  <button id="open">Padhna shuru karu?</button>
+
+  <section id="letter" aria-live="polite">
+    <div class="paper rise">
+      <p>Anaya, sabse pehle ye bolna chahta hu ki mujhe pata hai tune pichhle kuch time me bahut kuch jhela hai. Jab koi apna ekdum se baat karna band kar de, block kar de, toh uska dard sirf us insaan ka nahi hota, us pure bharose ka hota hai jo tune banaya tha. Main ye nahi keh sakta ki main us dard ko poori tarah samajhta hu, par itna zaroor jaanta hu ki tu us sab ke liye kuch bhi galat nahi thi. Tu waisi hi pyari hai jaisi pehle thi, aur kisi ke chhod jaane se teri value kam nahi hoti.</p>
+      <p>Main tujhe ye bhi nahi bolunga ki sab kuch jaldi theek ho jayega, kyunki jhuthi tasalli mujhe pasand nahi. Zakhm ko bharne me waqt lagta hai, aur tu jitna waqt chahe utna le. Main bas itna chahta hu ki is waqt me tu akeli na ho. Jab bhi tera mann kare baat karne ka, ya sirf chup baithne ka, main yahin hu. Na kuch poochunga jo tu batana na chahe, na kisi se teri kisi se tulna karunga.</p>
+      <p>Agar kabhi tu mujhe mauka degi, toh main poori koshish karunga ki jo sapne tune dekhe hain, unhe pure karne me tera saath du. Wo bhi tere hisaab se, tere pace pe. Main tujhe badalna nahi chahta, tujhe wahi rehne dunga jo tu hai. Tere hasne ki wajah banna chahta hu, aur jab tu rooye toh un aansuon ki wajah nahi.</p>
+      <p>Aur agar abhi tera dil is layak nahi hai ya tujhe time chahiye, toh bhi koi dikkat nahi. Main kahin nahi ja raha. Dost banke saath rahunga, aur jis din tujhe lagega ki ab tu taiyaar hai, us din bhi main wahi milunga jahan tune mujhe chhoda tha. Agle page pe maine likha hai ki main tere liye kya kya karunga. Agar padhna chahe toh.</p>
+      <p class="sign">— tera [naam]</p>
+    </div>
+    <div class="next"><button id="toWade">Mere wade padhna hai</button></div>
+  </section>
+</div>
+
+<!-- PAGE 2 -->
+<div class="view" id="v-wade">
+  <a class="back" href="#pehla">← wapas</a>
+  <h1>Main tere liye ye karunga.</h1>
+  <p class="lead">Bade bade daave nahi, sirf wo cheezein jo main sach me nibha sakta hu.</p>
+
+  <div class="promise">
+    <h2>Main tujhe sunuga</h2>
+    <p>Chahe teri baat chhoti ho ya lambi, chahe tu din me 10 baar ek hi cheez bole. Main beech me nahi toketa, na hi bolunga ki ab chhod na isko.</p>
+  </div>
+  <div class="promise">
+    <h2>Main tujhe block nahi karunga</h2>
+    <p>Naraz hua toh bol ke bataunga, ghayab nahi hounga. Jo bhi hoga, seedha baat karke suljhayenge, chup rehkar nahi.</p>
+  </div>
+  <div class="promise">
+    <h2>Main sach bolunga</h2>
+    <p>Mushkil sach bhi, aur wo bhi pyaar se. Tujhse kuch chhupaunga nahi, kyunki bharosa wahi banta hai.</p>
+  </div>
+  <div class="promise">
+    <h2>Main tere sapno ki izzat karunga</h2>
+    <p>Tu jo banna chahti hai, jo karna chahti hai, uske raste me main rukawat nahi, saath banunga. Padhai ho, career ho ya koi chhota sa shauk, sab me tere saath khada rahunga.</p>
+  </div>
+  <div class="promise">
+    <h2>Main tujhe time dunga</h2>
+    <p>Koi jaldi nahi, koi dabav nahi. Tu jab chahe haan bol, jab chahe ruk ja. Dono me main wahi rahunga.</p>
+  </div>
+  <div class="promise">
+    <h2>Main chhote chhote pal khaas banaunga</h2>
+    <p>Tere birthday pe koi chhota sa surprise, kisi bure din pe ek message jo bole ki tu akeli nahi hai, ya yunhi bina wajah ke teri pasand ki koi cheez. Mehngi cheezein nahi, par dil se ki hui.</p>
+  </div>
+  <div class="promise">
+    <h2>Main tujhe kabhi chhodke nahi jaunga</h2>
+    <p>Jab sab theek ho tab bhi, aur jab mushkil waqt aaye tab bhi. Ye wada main sabse zyada dil se kar raha hu.</p>
+  </div>
+
+  <div class="answer">
+    <button id="yes">Haan, baat karte hain</button>
+    <button id="time" class="ghost">Mujhe thoda time chahiye</button>
+  </div>
+  <p id="reply"></p>
+</div>
+
+</main>
+<script>
+var vL=document.getElementById('v-letter'),vW=document.getElementById('v-wade'),reply=document.getElementById('reply');
+function route(){
+  var w=(location.hash==='#wade');
+  vW.className='view'+(w?' on rise':'');
+  vL.className='view'+(w?'':' on');
+  window.scrollTo(0,0);
+}
+window.addEventListener('hashchange',route);
+route();
+document.getElementById('open').onclick=function(){
+  this.style.display='none';
+  document.getElementById('letter').className='open';
+  document.getElementById('letter').scrollIntoView({behavior:'smooth',block:'start'});
+};
+document.getElementById('toWade').onclick=function(){location.hash='wade';};
+function say(t){reply.style.display='block';reply.textContent=t;}
+document.getElementById('yes').onclick=function(){say('Bas seedha bol dena ya screenshot bhej dena. Main wait kar raha hu.');};
+document.getElementById('time').onclick=function(){say('Bilkul. Koi jaldi nahi hai, tu jab chahe tab.');};
+</script>
+</body>
+</html>
